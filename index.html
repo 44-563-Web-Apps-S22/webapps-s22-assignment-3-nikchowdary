@@ -54,3 +54,26 @@
   
 </table>
 
+<hr>
+<h2>Oriented area of a triangle</h2>
+<p>i choose a triangular algorithm for using that we can find a area of triangle.</p>
+<pre>int signed_area_parallelogram(point2d p1, point2d p2, point2d p3) {
+  return cross(p2 - p1, p3 - p2);
+}
+
+double triangle_area(point2d p1, point2d p2, point2d p3) {
+  return abs(signed_area_parallelogram(p1, p2, p3)) / 2.0;
+}
+
+bool clockwise(point2d p1, point2d p2, point2d p3) {
+  return signed_area_parallelogram(p1, p2, p3) < 0;
+}
+
+bool counter_clockwise(point2d p1, point2d p2, point2d p3) {
+  return signed_area_parallelogram(p1, p2, p3) > 0;
+}
+</pre>
+<h2>Algorithms for Competitive Programming</h2>
+
+<a>https://cp-algorithms.com/geometry/oriented-triangle-area.html</a>
+
